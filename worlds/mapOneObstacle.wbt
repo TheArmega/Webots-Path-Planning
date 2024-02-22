@@ -9,8 +9,8 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.7202876309280574 0.0019171848604506894 0.6936728718454093 3.1440149563313264
-  position 3.956004754948818 9.307413152398105 33.36528514975291
+  orientation -0.7271882469180221 0.001904977728675137 0.686435448242693 3.1440531782757355
+  position 3.4043883903227408 9.978192671345266 28.795231706230737
 }
 TexturedBackground {
 }
@@ -19,6 +19,16 @@ TexturedBackgroundLight {
 Floor {
   translation 5 9.5 0
   size 10 19
+}
+E-puck {
+  translation 1.5 1.5 0
+  controller "withObstacles"
+  turretSlot [
+    InertialUnit {
+    }
+    GPS {
+    }
+  ]
 }
 SolidBox {
   translation 0.5 0.5 0.25
@@ -121,21 +131,6 @@ SolidBox {
   size 1 1 0.5
 }
 SolidBox {
-  translation 1.5 3.5 0.25
-  name "box_1_3"
-  size 1 1 0.5
-}
-SolidBox {
-  translation 1.5 9.5 0.25
-  name "box_1_9"
-  size 1 1 0.5
-}
-SolidBox {
-  translation 1.5 15.5 0.25
-  name "box_1_15"
-  size 1 1 0.5
-}
-SolidBox {
   translation 1.5 18.5 0.25
   name "box_1_18"
   size 1 1 0.5
@@ -143,31 +138,6 @@ SolidBox {
 SolidBox {
   translation 2.5 0.5 0.25
   name "box_2_0"
-  size 1 1 0.5
-}
-SolidBox {
-  translation 2.5 3.5 0.25
-  name "box_2_3"
-  size 1 1 0.5
-}
-SolidBox {
-  translation 2.5 6.5 0.25
-  name "box_2_6"
-  size 1 1 0.5
-}
-SolidBox {
-  translation 2.5 9.5 0.25
-  name "box_2_9"
-  size 1 1 0.5
-}
-SolidBox {
-  translation 2.5 12.5 0.25
-  name "box_2_12"
-  size 1 1 0.5
-}
-SolidBox {
-  translation 2.5 15.5 0.25
-  name "box_2_15"
   size 1 1 0.5
 }
 SolidBox {
@@ -181,31 +151,6 @@ SolidBox {
   size 1 1 0.5
 }
 SolidBox {
-  translation 3.5 3.5 0.25
-  name "box_3_3"
-  size 1 1 0.5
-}
-SolidBox {
-  translation 3.5 6.5 0.25
-  name "box_3_6"
-  size 1 1 0.5
-}
-SolidBox {
-  translation 3.5 9.5 0.25
-  name "box_3_9"
-  size 1 1 0.5
-}
-SolidBox {
-  translation 3.5 12.5 0.25
-  name "box_3_12"
-  size 1 1 0.5
-}
-SolidBox {
-  translation 3.5 15.5 0.25
-  name "box_3_15"
-  size 1 1 0.5
-}
-SolidBox {
   translation 3.5 18.5 0.25
   name "box_3_18"
   size 1 1 0.5
@@ -216,28 +161,13 @@ SolidBox {
   size 1 1 0.5
 }
 SolidBox {
-  translation 4.5 3.5 0.25
-  name "box_4_3"
-  size 1 1 0.5
-}
-SolidBox {
-  translation 4.5 6.5 0.25
-  name "box_4_6"
-  size 1 1 0.5
-}
-SolidBox {
-  translation 4.5 9.5 0.25
-  name "box_4_9"
-  size 1 1 0.5
-}
-SolidBox {
   translation 4.5 12.5 0.25
   name "box_4_12"
   size 1 1 0.5
 }
 SolidBox {
-  translation 4.5 15.5 0.25
-  name "box_4_15"
+  translation 4.5 13.5 0.25
+  name "box_4_13"
   size 1 1 0.5
 }
 SolidBox {
@@ -251,28 +181,13 @@ SolidBox {
   size 1 1 0.5
 }
 SolidBox {
-  translation 5.5 3.5 0.25
-  name "box_5_3"
-  size 1 1 0.5
-}
-SolidBox {
-  translation 5.5 6.5 0.25
-  name "box_5_6"
-  size 1 1 0.5
-}
-SolidBox {
-  translation 5.5 9.5 0.25
-  name "box_5_9"
-  size 1 1 0.5
-}
-SolidBox {
   translation 5.5 12.5 0.25
   name "box_5_12"
   size 1 1 0.5
 }
 SolidBox {
-  translation 5.5 15.5 0.25
-  name "box_5_15"
+  translation 5.5 13.5 0.25
+  name "box_5_13"
   size 1 1 0.5
 }
 SolidBox {
@@ -286,28 +201,13 @@ SolidBox {
   size 1 1 0.5
 }
 SolidBox {
-  translation 6.5 3.5 0.25
-  name "box_6_3"
-  size 1 1 0.5
-}
-SolidBox {
-  translation 6.5 6.5 0.25
-  name "box_6_6"
-  size 1 1 0.5
-}
-SolidBox {
-  translation 6.5 9.5 0.25
-  name "box_6_9"
-  size 1 1 0.5
-}
-SolidBox {
   translation 6.5 12.5 0.25
   name "box_6_12"
   size 1 1 0.5
 }
 SolidBox {
-  translation 6.5 15.5 0.25
-  name "box_6_15"
+  translation 6.5 13.5 0.25
+  name "box_6_13"
   size 1 1 0.5
 }
 SolidBox {
@@ -321,28 +221,13 @@ SolidBox {
   size 1 1 0.5
 }
 SolidBox {
-  translation 7.5 3.5 0.25
-  name "box_7_3"
-  size 1 1 0.5
-}
-SolidBox {
-  translation 7.5 6.5 0.25
-  name "box_7_6"
-  size 1 1 0.5
-}
-SolidBox {
-  translation 7.5 9.5 0.25
-  name "box_7_9"
-  size 1 1 0.5
-}
-SolidBox {
   translation 7.5 12.5 0.25
   name "box_7_12"
   size 1 1 0.5
 }
 SolidBox {
-  translation 7.5 15.5 0.25
-  name "box_7_15"
+  translation 7.5 13.5 0.25
+  name "box_7_13"
   size 1 1 0.5
 }
 SolidBox {
@@ -353,16 +238,6 @@ SolidBox {
 SolidBox {
   translation 8.5 0.5 0.25
   name "box_8_0"
-  size 1 1 0.5
-}
-SolidBox {
-  translation 8.5 6.5 0.25
-  name "box_8_6"
-  size 1 1 0.5
-}
-SolidBox {
-  translation 8.5 12.5 0.25
-  name "box_8_12"
   size 1 1 0.5
 }
 SolidBox {
@@ -464,14 +339,4 @@ SolidBox {
   translation 9.5 18.5 0.25
   name "box_9_18"
   size 1 1 0.5
-}
-E-puck {
-  translation 1.5 1.5 0
-  controller "withObstacles"
-  turretSlot [
-    InertialUnit {
-    }
-    GPS {
-    }
-  ]
 }

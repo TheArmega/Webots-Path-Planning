@@ -11,7 +11,7 @@ from node        import Node
 from aStar       import aStar
 
 #routeMap = r"C:\Users\sanma\Documents\practica-webots\worlds\mapWithoutObstacles\mapWithoutObstacles.csv"
-routeMap = r'C:\Users\sanma\Documents\practica-webots\worlds\mapWithoutObstacles.csv'
+routeMap = r'C:\Users\sanma\Documents\practica-webots\worlds\mapOneObstacle.csv'
 
 # Transform the csv file into a 1s and 0s matrix
 matrixClass = csvToMatrix(routeMap)

@@ -3,6 +3,9 @@ import math
 from node import Node
 
 class aStar:
+    """
+    Clase que implementa el algoritmo A* para la búsqueda de caminos en una matriz con obstáculos.
+    """
 
     def __init__(self):
         pass
@@ -10,6 +13,10 @@ class aStar:
     def calculate_target_angle_with_pathfinding(self, node, x_goal, y_goal):
         """
         Calcula el ángulo objetivo en radianes teniendo en cuenta los obstáculos en la matriz.
+        :param node: Nodo actual del robot.
+        :param x_goal: Coordenada x del objetivo.
+        :param y_goal: Coordenada y del objetivo.
+        :return: Ángulo objetivo en radianes.
         """
         start = Node(node.x, node.y)
         goal = Node(x_goal, y_goal)
@@ -28,13 +35,22 @@ class aStar:
         """
         Calcula la diferencia de ángulo más corta para ajustar el yaw actual hacia el objetivo.
         Retorna el valor que indica si girar a la izquierda o derecha y cuánto debe girar.
+        :param yaw: Yaw actual del robot.
+        :param target_yaw: Yaw objetivo del robot.
+        :return: Diferencia de ángulo más corta para ajustar el yaw.
         """
         # Normalizar ángulos entre -pi y pi
         angle_diff = (target_yaw - yaw + math.pi) % (2 * math.pi) - math.pi
         return angle_diff
 
     def calculate_target_angle(self, node, x_goal, y_goal):
-
+        """
+        Calcula el ángulo objetivo en radianes utilizando la función atan2.
+        :param node: Nodo actual del robot.
+        :param x_goal: Coordenada x del objetivo.
+        :param y_goal: Coordenada y del objetivo.
+        :return: Ángulo objetivo en radianes.
+        """
         dx = x_goal - node.x
         dy = y_goal - node.y
 
@@ -43,20 +59,29 @@ class aStar:
         return target_angle
     
     def move_robot_towards_goal(self, node, yaw, x_goal, y_goal, motor_right, motor_left, matrix, visitedNodes):
+        """
+        Mueve el robot hacia el objetivo utilizando el algoritmo A* y ajustando el yaw.
+        :param node: Nodo actual del robot.
+        :param yaw: Yaw actual del robot.
+        :param x_goal: Coordenada x del objetivo.
+        :param y_goal: Coordenada y del objetivo.
+        :param motor_right: Motor derecho del robot.
+        :param motor_left: Motor izquierdo del robot.
+        :param matrix: Matriz que representa el entorno del robot.
+        :param visitedNodes: Lista de nodos visitados durante la búsqueda.
+        :return: True si el robot se mueve hacia el objetivo, False si no hay camino disponible.
+        """
 
         # Calculate Manhattan distances in all four directions
         distances = {
-            'up': (abs(node.x - 1) - abs(x_goal) + abs(node.y) - abs(y_goal)),
-            'down': (abs(node.x + 1) - abs(x_goal) + abs(node.y) - abs(y_goal)),
-            'right': (abs(node.x) - abs(x_goal) + abs(node.y + 1) - abs(y_goal)),
-            'left': (abs(node.x) - abs(x_goal) + abs(node.y - 1) - abs(y_goal))
+            'up': (abs(node.x - 1 - x_goal) + abs(node.y - y_goal)),
+            'down': (abs(node.x + 1 - x_goal) + abs(node.y - y_goal)),
+            'right': (abs(node.x - x_goal) + abs(node.y + 1 - y_goal)),
+            'left': (abs(node.x - x_goal) + abs(node.y - 1 - y_goal))
         }
         
-        #print(distances)
-
         # Sort distances and iterate to find a direction to move
         sorted_distances = sorted(distances, key=distances.get)
-        #print(sorted_distances)
         
         control = False
 
@@ -87,9 +112,7 @@ class aStar:
         if control == False:
             for i in range(0, len(visitedNodes)):
                 if node.parentID == visitedNodes[i].myID:
-                    print("MY ID: ",node.myID)
                     nodoAux = visitedNodes[i]
-                    print(nodoAux.myID)
                     break
             dx = nodoAux.x
             dy = nodoAux.y

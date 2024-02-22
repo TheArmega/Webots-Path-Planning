@@ -3,12 +3,18 @@ from queue import PriorityQueue
 class Node:
     
     def __init__(self, x, y, myID, parentID):
+        """
+        Inicializa un nodo con las coordenadas (x, y), su ID y el ID de su nodo padre.
+        """
         self.x = x
         self.y = y
         self.myID = myID
         self.parentID = parentID
 
     def dump(self):
+        """
+        Imprime las propiedades del nodo.
+        """
         print("---------- x "+str(self.x)+\
                         " | y "+str(self.y)+\
                         " | id "+str(self.myID)+\
