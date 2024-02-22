@@ -4,7 +4,7 @@
 En este projecto he desarrollado dos algoritmos de planificación con el objetivo de que una plataforma robótica sea capaz de ir de un punto A a un punto B en un mapa con y sin obstáculos. A parte, se han añadadido una serie de elementos extras para complementar el desarrollo de este trabajo.
 
 ## Authors
-- [Jaime Mas Santillán](https://github.com/TheArmega/Webots-Path-Planning/master)
+- [Jaime Mas Santillán](https://github.com/TheArmega/Webots-Path-Planning/tree/master)
 
 
 ## Index
